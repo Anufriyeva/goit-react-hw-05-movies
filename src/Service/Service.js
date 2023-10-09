@@ -1,30 +1,48 @@
 import axios from 'axios';
 
-const API_KEY = '38734674-7bb0a4a530548aef0bc7ad612';
-const BASE_URL = 'https://pixabay.com/api/';
+const API_KEY = '6a36e301885f962349cee6c965980664';
+const BASE_URL = 'https://api.themoviedb.org/3';
 
-const api = axios.create({
-  baseURL: BASE_URL,
-  params: {
-    key: API_KEY,
-    image_type: 'photo',
-    orientation: 'horizontal',
-    safesearch: true,
-    per_page: 12,
-  },
-});
 
-export const fetchImages = async (value, page) => {
+async function fetchData(url, params = {}) {
   try {
-    const { data } = await api.get('', {
+    const response = await axios.get(url, {
       params: {
-        q: value,
-        page,
+        ...params,
+        api_key: API_KEY,
       },
     });
-    return data;
+    return response.data;
   } catch (error) {
-    console.error('Error fetching photos:', error);
+    console.error('Помилка при отриманні даних з API:', error);
     throw error;
   }
-};
+}
+
+export async function getTrendingMovies() {
+  const url = `${BASE_URL}/trending/movie/day`;
+  return fetchData(url);
+}
+
+export async function searchMovies(query) {
+  const url = `${BASE_URL}/search/movie`;
+  const params = {
+    query,
+  };
+  return fetchData(url, params);
+}
+
+export async function getMovieDetails(movieId) {
+  const url = `${BASE_URL}/movie/${movieId}`;
+  return fetchData(url);
+}
+
+export async function getMovieCredits(movieId) {
+  const url = `${BASE_URL}/movie/${movieId}/credits`;
+  return fetchData(url);
+}
+
+export async function getMovieReviews(movieId) {
+  const url = `${BASE_URL}/movie/${movieId}/reviews`;
+  return fetchData(url);
+}
