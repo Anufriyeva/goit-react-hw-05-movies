@@ -12,7 +12,7 @@ const Home = () => {
         const trendingMovies = await getTrendingMovies();
         setMovies(trendingMovies.results);
       } catch (error) {
-        console.error('Помилка при отриманні даних:', error);
+        console.error('Error occurred while loading movies:', error);
       }
     }
 
