@@ -1,33 +1,23 @@
-import { NavLink, Navigate, useNavigate } from "react-router-dom"
+import React from 'react';
+import { Link } from "react-router-dom"
+import { HeaderContainer, Nav } from './Header.styled';
 
-const Header = () => {
+const Header = ({ homeLink, moviesLink }) => {
 
-	return (
-		<nav className='navbar bg-dark mb-3 navbar-expand-lg'>
-			<div className='container-fluid'>
-				<span className='navbar-brand mb-0 h1 text-success text-white'>
-					themoviedb
-				</span>
-				<div
-					className='collapse navbar-collapse'
-					id='navbarNavAltMarkup'
-				>
-					<div className='navbar-nav'>
-						<NavLink
-							className='nav-link text-white '
-							aria-current='page'
-							to='/'
-						>
-							Home
-						</NavLink>
-						<NavLink className='nav-link text-white' to='/movies'>
-							Movies
-						</NavLink>
-					</div>
-				</div>
-			</div>
-		</nav>
-	)
+    return (
+    <HeaderContainer>
+      <Nav>
+        <ul>
+          <li>
+            <Link to={homeLink}>Home</Link>
+          </li>
+          <li>
+            <Link to={moviesLink}>Movies</Link>
+          </li>
+        </ul>
+      </Nav>
+    </HeaderContainer>
+  );
 }
 
 export default Header
