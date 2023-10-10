@@ -27,7 +27,7 @@ const App = () => {
   
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<h2>Loading...</h2>}>
     <StyledAppContainer>
       <Header homeLink={homeLink} moviesLink={moviesLink} />
       

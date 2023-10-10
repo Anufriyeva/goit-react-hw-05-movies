@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { useParams, Link, useNavigate, useLocation, Routes, Route } from 'react-router-dom';
 import { getMovieDetails } from '../../Service/Service';
 import { MovieDetailsContainer, MovieInfo, PosterImage, CastButton, ReviewsButton, BackButton } from './MovieDetails.styled';
-import Cast from 'components/Cast/Cast';
-import Reviews from 'components/Reviews/Reviews';
+// import Cast from 'components/Cast/Cast';
+// import Reviews from 'components/Reviews/Reviews';
+
+const Cast = lazy(() => import('components/Cast/Cast'));
+const Reviews = lazy(() => import('components/Reviews/Reviews'));
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -62,10 +65,12 @@ const MovieDetails = () => {
           <Link to={`/movies/${movieId}/reviews`}>
             <ReviewsButton>Reviews</ReviewsButton>
           </Link>
+          <Suspense fallback={<h2>Loading...</h2>}>
           <Routes>
               <Route path="cast" element={<Cast />} />
               <Route path="reviews" element={<Reviews movieId={movieId} />} />
-          </Routes>
+            </Routes>
+            </Suspense>
         </>
       )}
     </MovieDetailsContainer>
