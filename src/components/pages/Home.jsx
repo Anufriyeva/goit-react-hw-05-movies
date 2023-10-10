@@ -25,7 +25,7 @@ const Home = () => {
       <MovieList>
         {movies.map((movie) => (
           <MovieCard key={movie.id}>
-            <Link to={`/movie/${movie.id}`}>
+            <Link to={`/movies/${movie.id}`}>
               <MovieImage
                 src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
                 alt={movie.title}
