@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const CastContainer = styled.div`
   padding: 20px;
-  background-color: #f0f0f0;
+  background-color: rgb(1, 1, 1);
 `;
 
 export const CastList = styled.ul`
@@ -16,8 +16,8 @@ export const CastCard = styled.li`
   width: 150px;
   margin: 10px;
   text-align: center;
-  background-color: #fff;
-  border-radius: 5px;
+  background-color: #1e1e1f;
+  border-radius: 3px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 `;
 

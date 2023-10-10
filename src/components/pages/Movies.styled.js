@@ -46,8 +46,17 @@ export const MovieList = styled.div`
 export const MovieCard = styled.div`
   max-width: 200px;
   text-align: center;
-  border: 1px solid #ccc;
+  border: 1px solid #df3b01;
   padding: 10px;
+  background-color: #1e1e1f;
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+  a:hover {
+    text-decoration: underline;
+    /* color: #df3b01; */
+  }
 `;
 
 export const MovieImage = styled.img`

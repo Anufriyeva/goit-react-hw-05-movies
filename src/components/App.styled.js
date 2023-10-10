@@ -8,14 +8,14 @@ export const StyledAppContainer = styled.div`
   padding: 20px;
 `;
 
-export const StyledImageList = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
-  margin-top: 20px;
+// export const StyledImageList = styled.div`
+//   display: grid;
+//   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+//   gap: 10px;
+//   margin-top: 20px;
 
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-`;
+//   img {
+//     max-width: 100%;
+//     height: auto;
+//   }
+// `;

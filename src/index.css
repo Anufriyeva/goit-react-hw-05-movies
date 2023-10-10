@@ -7,8 +7,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: rgb(1, 1, 1); */
-  background-color: beige;
+  background-color: rgb(1, 1, 1);
+  /* background-color: beige; */
+  color: rgb(255, 255, 255);
 }
 
 code {
@@ -17,7 +18,7 @@ code {
 }
 
 img {
-  display: block;
+  /* display: block; */
   max-width: 100%;
   height: auto;
   border-radius: 3px;

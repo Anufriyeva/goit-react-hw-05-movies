@@ -5,17 +5,17 @@ export const MovieDetailsContainer = styled.div`
 `;
 
 export const BackButton = styled.button`
-  background-color: #0073e6;
+  background-color: #df3b01;
   color: #fff;
   border: none;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 3px;
   cursor: pointer;
   font-size: 16px;
   margin-bottom: 20px;
 
   &:hover {
-    background-color: #005bbd;
+    background-color: #f27e0a;
   }
 `;
 
@@ -26,12 +26,12 @@ export const PosterImage = styled.img`
 `;
 
 export const MovieInfo = styled.div`
-  display: flex;
+  /* display: flex; */
   align-items: center;
 `;
 
 export const CastButton = styled.button`
-  background-color: #0073e6;
+  background-color: #df3b01;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -41,12 +41,12 @@ export const CastButton = styled.button`
   margin-right: 10px;
 
   &:hover {
-    background-color: #005bbd;
+    background-color: #f27e0a;
   }
 `;
 
 export const ReviewsButton = styled.button`
-  background-color: #0073e6;
+  background-color: #df3b01;
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -55,6 +55,6 @@ export const ReviewsButton = styled.button`
   font-size: 16px;
 
   &:hover {
-    background-color: #005bbd;
+    background-color: #f27e0a;
   }
 `;
