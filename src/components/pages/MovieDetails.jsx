@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate, useLocation, Routes, Route } from 'react-router-dom';
 import { getMovieDetails } from '../../Service/Service';
 import { MovieDetailsContainer, MovieInfo, PosterImage, CastButton, ReviewsButton, BackButton } from './MovieDetails.styled';
+import Cast from 'components/Cast/Cast';
+import Reviews from 'components/Reviews/Reviews';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -60,10 +62,10 @@ const MovieDetails = () => {
           <Link to={`/movies/${movieId}/reviews`}>
             <ReviewsButton>Reviews</ReviewsButton>
           </Link>
-          {/* <Routes>
+          <Routes>
               <Route path="cast" element={<Cast />} />
               <Route path="reviews" element={<Reviews movieId={movieId} />} />
-          </Routes> */}
+          </Routes>
         </>
       )}
     </MovieDetailsContainer>
